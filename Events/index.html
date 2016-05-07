@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Ritu '16 | Events</title>
+    
+    
+    <link rel="shortcut icon" href="images/ritu1.ico">
+     <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
+        <link rel="stylesheet" href="css/style.css">
+		   
+		<script src='js/jq.js'></script>
+		<script type="text/javascript" src="js/interface.js"></script>
+<script src="js/modernizr.custom.js"></script>
+     <style type="text/css">
+   
+   
+   @font-face{
+      
+        src:url('jura/Jura-Regular.ttf');
+         font-family: Jura;
+    }
+   body{
+		font-family: "Jura", sans-serif;
+		
+		
+		}
+   
+   .no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0;  }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(loader.gif) center no-repeat #fff;
+        background-color: #082330;
+}
+
+
+   </style>
+    <script>
+	$(window).load(function() {
+		// Animate loader off screen
+               //sleep(1000);
+		$(".se-pre-con").css('display','none');
+		});
+	
+	</script>
+    
+  </head>
+
+  <body style="background: url('hkl.png');margin:0 0 0 0;padding:0 0 0 0;">
+
+  <div class="se-pre-con">
+<h1 style='position:absolute;bottom:10%;width:100%;text-align:center;color:white'>Ritu'16</h1>
+<h1 style='position:absolute;bottom:5%;width:100%;text-align:center;color:white'>Techno-Cultural Fest. of RIT, Kottayam</h1>
+</div>
+  <div class="dock" id="dock">
+  <div class="dock-container">
+  <a class="dock-item" href="../index.html"><span style='color:white'>Home</span><img src="images/home2.png" alt="home" /></a> 
+  <a class="dock-item" href="../Contacts/index.html"><span style='color:white'>Contact</span ><img src="images/contact2.png" alt="contact" /></a> 
+  <a class="dock-item"  href="../Events/index.html" onclick="overlay()"><span style='color:white'>Events</span><img src="images/events2.png" alt="portfolio" /></a> 
+  <a class="dock-item" href="../Highlights/index.html" onclick="overlay()"><span style='color:white'>Highlights</span><img src="images/highlights2.png" alt="music" /></a> 
+  <a class="dock-item" href="#" ><span style='color:white'>Why Sponsor Us ?</span><img src="images/why2.png" alt="video" /></a> 
+  <a class="dock-item" target='_blank' href="../location/map.html"><span style='color:white'>Location</span><img src="images/location2.png" alt="history" /></a> 
+  <a class="dock-item" target='_blank' href="../Gallery/index.html"><span style='color:white'>Gallery</span><img src="images/gallery2.png" alt="calendar" /></a> 
+  <a class="dock-item" target='_blank' href="https://www.facebook.com/rituofficial/"><span style='color:white'>Follow us on facebook</span><img src="images/facebook2.png" alt="links" /></a> 
+  <a class="dock-item" target='_blank' href="https://twitter.com/RITU_Official"><span style='color:white'>Tweet us</span><img src="images/twitter2.png" alt="rss" /></a> 
+ 
+  </div>
+</div>
+    <div style="color:#ffffff;text-align:center;"> 
+	<h1 style="font-size:4em;">
+			 Ritu '16 - Events
+	</h1>
+	</div>
+<div style="margin:10px 10px 10px 10px;padding:0 0 0 0;">
+<div class="filters">
+
+  <div class="ui-group" style="margin-left:35% ;">
+   
+    <div class="button-group js-radio-button-group" data-filter-group="color">
+      <button class="button  noneed" data-filter="">ALL</button>
+      <button class="button noneed" data-filter=".gen">GENERAL</button>
+      <button class="button noneed"  data-filter=".cult">CULTURAL</button>
+      <button class="button is-checked" id='blll' data-filter=".tech">TECHNICAL</button>
+    </div>
+  </div>
+<br />
+  <div class="ui-group" id='mybu'  style="margin-left:18% ;">
+   
+    <div class="button-group js-radio-button-group" data-filter-group="size">
+      <button class="button is-checked alldept" data-filter="">All</button>
+	   <button class="button" data-filter=".cse">Computer Science</button>
+      <button class="button" data-filter=".ece">Electronics</button>
+      <button class="button" data-filter=".ce">Civil</button>
+      <button class="button" data-filter=".mech">Mechanical</button>
+      <button class="button" data-filter=".eee">Electrical</button>
+	   <button class="button" data-filter=".barch">Architecture</button>
+	    <button class="button" data-filter=".mca">MCA Department</button>
+    </div>
+  </div>
+
+  
+
+</div>
+<style type='text/css'>
+
+.gridd {
+	
+	
+	margin:5px;
+	
+	//border-radius:10%;
+	overflow:hidden;
+	text-align: center;
+	float: left;
+}
+
+/* Common style */
+.gridd figure {
+	position: relative;
+	
+	overflow: hidden;
+	//border-radius:10%;
+	margin:0px;
+	width: 100%;
+	height: 100%;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.gridd figure img {
+overflow: hidden;
+	//border-radius:10%;
+	position: relative;
+	display: block;
+	height: 110%;
+	width: 110%;
+	opacity: 0.8;
+}
+
+.gridd figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.gridd figure figcaption::before,
+.gridd figure figcaption::after {
+	pointer-events: none;
+}
+
+.gridd figure figcaption,
+.gridd figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.gridd figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.gridd figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.gridd figure h2 span {
+	font-weight: 800;
+}
+
+.gridd figure h2,
+.gridd figure p {
+	margin: 0;
+}
+
+.gridd figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+/*---------------*/
+/***** Lexi *****/
+/*---------------*/
+
+figure.effect-lexi {
+	background: -webkit-linear-gradient(-45deg, #000 0%,#fff 100%);
+	background: linear-gradient(-45deg, #000 0%,#fff 100%);
+}
+
+figure.effect-lexi img {
+overflow: hidden;
+	//border-radius:10%;
+	margin: -10px 0 0 -10px;
+	max-width: none;
+	width: -webkit-calc(100% + 10px);
+	width: calc(100% + 10px);
+	opacity: 0.9;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(10px,10px,0);
+	transform: translate3d(10px,10px,0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+figure.effect-lexi figcaption::before,
+figure.effect-lexi p {
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-lexi figcaption::before {
+	position: absolute;
+	right: -100px;
+	bottom: -100px;
+	width: 100%;
+	height: 120%;
+	border: 2px solid #fff;
+	background:rgba(0,0,0,0.6);
+	border-radius: 50%;
+	box-shadow: 0 0 0 900px rgba(255,255,255,0.2);
+	content: '';
+	opacity: 0;
+	-webkit-transform: scale3d(0.5,0.5,1);
+	transform: scale3d(0.5,0.5,1);
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+figure.effect-lexi:hover img {
+	opacity: 0.6;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-lexi h2 {
+	text-align: left;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(5px,5px,0);
+	transform: translate3d(5px,5px,0);
+}
+
+figure.effect-lexi p {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 0 1.5em 1.5em 0;
+	width: 60%;
+	text-align: right;
+	opacity: 0;
+	-webkit-transform: translate3d(20px,20px,0);
+	transform: translate3d(20px,20px,0);
+}
+
+figure.effect-lexi:hover figcaption::before {
+	opacity: 1;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+
+figure.effect-lexi:hover h2,
+figure.effect-lexi:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal.fade .modal-dialog {
+	-webkit-transform: scale(0.1);
+	-moz-transform: scale(0.1);
+	-ms-transform: scale(0.1);
+	transform: scale(0.1);
+	top: 300px;
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.modal.fade.in .modal-dialog {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	-webkit-transform: translate3d(0, -300px, 0);
+	transform: translate3d(0, -300px, 0);
+	opacity: 1;
+}
+
+.modal-header {
+  font-family: "Bree Serif";
+  background-color: #F6F5F5;
+  border-radius: 5px;
+  text-align:center;
+}
+
+.modal-body {
+  font-size: 16px;
+}
+
+p {
+  margin: 10px;
+}
+
+ .dock {
+	position: relative; 
+	height: 50px; 
+	text-align: center;
+}
+.dock-container {
+	position: absolute;
+	height: 50px;
+	background: rgba(220,220,220,0.3);
+	padding-left: 20px;
+}
+a.dock-item {
+	display: block;
+	width: 40px;
+	color: #000;
+	position: absolute;
+	top: 0px;
+	text-align: center;
+	text-decoration: none;
+	font: bold 16px "Jura", sans-serif;
+}
+.dock-item img {
+	border: none; 
+	margin: 5px 10px 0px; 
+	width: 100%; 
+}
+.dock-item span {
+	display: none; 
+	padding-left: 20px;
+}
+
+/* dock2 - bottom */
+#dock2 {
+	width: 100%;
+	bottom: 0px;
+	position: absolute;
+	left: 0px;
+}
+.dock-container2 {
+	position: absolute;
+	height: 50px;
+	background: rgba(220,220,220,0.3);
+	padding-left: 20px;
+}
+a.dock-item2 {
+	display: block; 
+	font: bold 16px "Jura", sans-serif;
+	width: 40px; 
+	color: #000; 
+	padding: 5px 5px 5px 5px;
+	bottom: 0px; 
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+}
+.dock-item2 span {
+	display: none;
+	padding-left: 20px;
+}
+.dock-item2 img {
+	border: none; 
+	margin: 5px 10px 0px; 
+	width: 100%; 
+}
+.invisi{
+
+display:none;
+}
+
+
+
+
+
+</style>
+
+<div class="grid">
+
+  <div class="gridd color-shape tech cse">
+  
+					<div class="invisi">
+					<img src="images/rapidminer.png" class='pimage'/>
+								<p class='tit'>
+								RAPID MINER
+								</p>
+								<p class='date'>
+								Date updated soon
+								</p>
+								<p class='descript'>
+								Rapid Miner is the main event of Computer Science Dept. It is a team event. Each team can have max 4 & min 2 members. The event consists of 5 levels. 
+								</p>
+								<p class='coords'>
+								Event Coordinators : <br /> Aswin Rajaram (+91 9544016723) <br /> Abhi S Raj ( +91 8606252580)
+								</p> 
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/rapidminer.png" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>If you have skills, Mine your way to Become the Rapid Miner</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  <div class="gridd color-shape tech cse" >
+  
+					<div class="invisi">
+					<img src="images/404.png" class='pimage'/>
+								<p class='tit'>
+								404
+								</p>
+								<p class='date'>
+								Date will be Updated soon.
+								</p>
+								<p class='descript'>
+								404 is a web designing event in which students can participate as a team of maximum 2 students.
+Web designing can be done in Html and Css. It will be 3hr Event consisting of three levels.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br /> Arun Kumar S (+91 9526670808)
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/404.png" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>People say you can't live without food.. I think web is more important</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+   <div class="gridd color-shape tech cse">
+  
+					<div class="invisi">
+					<img src="images/gameofcodes.jpg" class='pimage'/>
+								<p class='tit'>
+								GAME OF CODES
+								</p>
+								<p class='date'>
+								Date will be Updated Soon.
+								</p>
+								<p class='descript'>
+								Game of codes is a coding event in which students can participate as a 2 member team or as single. Coding can be done in C, CPP, python, or Java. It will be a 4hr event Consisting of Three levels.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br /> Irshadudeen (+91 9633917661)
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/gameofcodes.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>ARE YOU READY FOR THE GAME ?</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+ <div class="gridd color-shape tech cse">
+  
+					<div class="invisi">
+					<img src="images/quickfix.png" class='pimage'/>
+								<p class='tit'>
+								QUICK FIX
+								</p>
+								<p class='date'>
+								Date will be Updated Soon.
+								</p>
+								<p class='descript'>
+								C-debugging<br />
+Programming is not a science.. but an art!! Good programming is not just writing code... but also fixing bugs!! It is often said that correcting errors is more difficult than wring programs. Quick-fix is a test of your understanding of the basic concepts of C... to check if you have what it takes to be a good programmer.  
+
+The event consists of 3 levels, with increasing difficulty levels... all checking your debugging capabilities.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br /> Deepak (+91 8111867740)
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/quickfix.png" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>It's not a bug - it's an undocumented feature. So are you ready to fix it.</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  <div class="gridd color-shape  tech cse">
+  
+					<div class="invisi">
+					<img src="images/googlr.jpg" class='pimage'/>
+								<p class='tit'>
+								GOOGLR
+								</p>
+								<p class='date'>
+								Date will be Updated Soon.
+								</p>
+								<p class='descript'>
+								
+In this event, an aptitude round will be conducted first to screen participants, after which the said participants will be asked to search for a given picture in a search engine. The one who pinpoints the clues and finds the picture FIRST is the winner of that round. In this manner, there will be 5 rounds after which the participant who have scored the maximum points shall be declared the winner of the event.
+
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br /> Stallon Thomas (+91 9495584854) <br />Sabir Ameen (+91 9497730041)
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/googlr.jpg" />
+						<figcaption>
+							<h2></h2>
+							<p>It's difficult to find a question which google can't answer.</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape  tech mca">
+  
+					<div class="invisi">
+					<img src="images/mca1.jpg" class='pimage'/>
+								<p class='tit'>
+								ADAM'S EYE
+								</p>
+								<p class='date'>
+								Date will be Updated Soon
+								</p>
+								<p class='descript'>
+							Spot Photography Contest.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Manu V Thampi (+91 9544639926)
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/mca1.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>Spot Photography</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech mca">
+  
+					<div class="invisi">
+					<img src="images/mca2.jpg" class='pimage'/>
+								<p class='tit'>
+								TASVEER NOVO
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Photoshop Editing And Designing.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Jithin pp (+91 8129461188)
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/mca2.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>PhotoShop editing and designing.</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  <div class="gridd color-shape tech mca">
+  
+					<div class="invisi">
+					<img src="images/mca3.jpg" class='pimage'/>
+								<p class='tit'>
+								TEKRAZE
+								</p>
+								<p class='date'>
+								Date will be updated soon.
+								</p>
+								<p class='descript'>
+								SPEEDY MATH. . CODING. . DEBUGGING. . 
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Donald James (+91 9495347554)<br />Rinju (+91 9495223284)
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/mca3.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>SPEEDY MATH. . CODING. . DEBUGGING. . </p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  <div class="gridd color-shape tech mca">
+  
+					<div class="invisi">
+					<img src="images/mca4.jpg" class='pimage'/>
+								<p class='tit'>
+								FIX-ON
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Hardware trouble shooting with treasure hunt.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Arun S (+91 9633880455 )
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/mca4.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>hardware trouble shooting with treasure hunt. </p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+ <div class="gridd color-shape tech mca">
+  
+					<div class="invisi">
+					<img src="images/mca5.jpg" class='pimage'/>
+								<p class='tit'>
+								Brain Marathon
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								A marathon quiz. .
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Nithin Sabu (+91 9061117273 )
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/mca5.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>A marathon quiz. .</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech mca">
+  
+					<div class="invisi">
+					<img src="images/mca6.jpg" class='pimage'/>
+								<p class='tit'>
+								APPLE TREE
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Express your innovative ideas. .
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Ashley (+91 8943179765 )
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/mca6.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>Express your innovative ideas. .</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech mca">
+  
+					<div class="invisi">
+					<img src="images/mca7.jpg" class='pimage'/>
+								<p class='tit'>
+								BLIND FAITH
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Blind Coding.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Vivek (+91 9400392956 )<br />Anoop K S (+91 9020832918 )
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/mca7.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>Blind Coding.</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech ece">
+  
+					<div class="invisi">
+					<img src="images/ece1.jpg" class='pimage'/>
+								<p class='tit'>
+								THE EXODUS
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								The arena is all set for the ultimate war of sophisticated machines. Where the wheels get tangled, where the fittest get survived, where there is no place for empathy…
+Get ready for the most exciting and ultimate war to bring up your machine that can survive till the end, with strength, power and speed. Department of Electronics and Communication Engineering presents you ‘The Exodus: Men and Machine’. Speed up your wheels for war of the bots.
+
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Jebin Joshua Sam: 9747540445<br />Cherian K Eapen: 8547212771
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ece1.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>MEN AND MACHINE  (ROBO WAR)</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  <div class="gridd color-shape tech ece">
+  
+					<div class="invisi">
+					<img src="images/ece2.jpg" class='pimage'/>
+								<p class='tit'>
+								LABHUNT RELOADED
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Strap down and lean back—RITU’16 is back with its exciting assortment of events. For those of  you who call yourself gizmo geeks, fortify your armors with all the technology in the world and prepare yourself to face one of the wildest marathons. . Department of Electronics and Communication Engineering  is all set to challenge your skills and stamina on its battlefield—Labhunt Reloaded: The Crosswords. Extraordinary things are always hidden in places people never think to look.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Ananthapadmanabhan G.: 9446662615<br />Veena Ashok: 8281463370<br />Arun Mohan: 8281859573
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ece2.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>LABHUNT RELOADED: THE CROSSWORDS</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech ece">
+  
+					<div class="invisi">
+					<img src="images/ece3.jpg" class='pimage'/>
+								<p class='tit'>
+								SELL ME THE CIRCUITS
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Are you skilled at circuits? Are you a good trader? Then this is your piece of cake. Department of Electronics and Communication Engineering presents ‘Sell me the circuit’. In trading it’s not about how much you make, but how much you don’t lose. Fasten your seats for your trade.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Austin Varghese Ipe: 9746012774<br />Kavya Mithran: 9645642581
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ece3.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>SELL ME THE CIRCUITS</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech ece">
+  
+					<div class="invisi">
+					<img src="images/ece4.jpg" class='pimage'/>
+								<p class='tit'>
+								ELECTROCUTION
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Age is never a matter in gaming. We become aged when we stop playing. Nothing becomes complete with a touch of fun, and that too with the electronics.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Yadu: 9447781391
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ece4.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>"We are all set to Electrify You."</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  <div class="gridd color-shape tech ece">
+  
+					<div class="invisi">
+					<img src="images/ece5.jpg" class='pimage'/>
+								<p class='tit'>
+								IC WAR
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Technology tailors us to suit the changing domain. Create something which has never been. Basic knowledge on IC’s and the skills to assemble and debug them, then what awaits is a wondrous world of 8 legged ICs like 555 and 741’s, to explore and to win.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Arun Mathew: 9400653007 <br />Aswathi T.: 964565548
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ece5.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>Come and battle with 8 legged IC's.</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech ece">
+  
+					<div class="invisi">
+					<img src="images/ece6.jpg" class='pimage'/>
+								<p class='tit'>
+								QUARANTINE
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+									Know to choose your destiny wisely, use your skills to unlock the mysteries, unlock each stage using your debugging techniques. Only a racing mind and laser beam focus can open the tight doors of each task. 
+Tie your laces, for what awaits is quite a long run.Department of Electronics and Communication Engineering presents the technical treasure hunt ‘QUARANTINE’.
+
+								</p>
+								<p class='coords'>
+								Event Co-ordinators :<br /> Ananthu Manoharan: 8547663066<br />
+Praise George: 9446759869<br />
+Jayaprasad T.J.: 9947156787
+
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ece6.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>QUARANTINE</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+ <div class="gridd color-shape tech eee">
+  
+					<div class="invisi">
+					<img src="images/eee1.jpg" class='pimage'/>
+								<p class='tit'>
+								Kart Rider 2.0
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Life isnt black or white.
+Its a million gray,
+But here are no in betweens 
+In the field where bot's to play.
+A black on white can take you
+Up the golden mount.
+A bit of harder focus,
+The fortune mine is yours..
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Ranjith Sethu : 9400726699 <br />Harishankar M.J. : 9446514989
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/eee1.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>Kart Rider 2.0</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech eee">
+  
+					<div class="invisi">
+					<img src="images/eee2.jpg" class='pimage'/>
+								<p class='tit'>
+								CAD Master
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								The beginning of creation
+Lies in ones imagination..
+Make your thinking visual..
+And lo! Theres magic in your hands...
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />SHRIRAJ : 9497271486 
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/eee2.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>CAD Master</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech eee">
+  
+					<div class="invisi">
+					<img src="images/eee3.jpg" class='pimage'/>
+								<p class='tit'>
+								Coil Gun 2.0
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Eyes on the target,
+Mind on the aim.
+Morality ends where the gun begins...
+Not a tinge of pity,
+Nor a drop of blood,
+A hit can lift you higher,
+A miss can tear you down.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Nikhil Mathew : 8281758766 <br />Robin Wilson : 8156921796 
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/eee3.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>Coil Gun</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech eee">
+  
+					<div class="invisi">
+					<img src="images/eee4.jpg" class='pimage'/>
+								<p class='tit'>
+								Papyrus 2.0
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Millions saw the apple fall
+But newton asked why..
+A why can often lead you..
+To a world of crazy stuff
+Curious enough to question
+And ardent to find answers??
+Lady luck is shining
+Bright above your crown...
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Sebastian Thomas : 8943415484
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/eee4.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>Papyrus 2.0</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech eee">
+  
+					<div class="invisi">
+					<img src="images/eee5.jpg" class='pimage'/>
+								<p class='tit'>
+								The Maestro 2.0
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Brace yourselves with knowledge. .
+Arm yourselves with wisdom..
+Its time to begin the battle
+For worthy warriers have come..
+Fight with all your wits. .
+And display your act of valour..
+For nothing short of triumph..
+Can lead you into glory..
+
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Gopu V : 8547165724 <br />Aparna Unni : 8281496831
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/eee5.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>The Maestro</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech ce">
+  
+					<div class="invisi">
+					<img src="images/ce1.jpg" class='pimage'/>
+								<p class='tit'>
+								PERUNTHACHAN
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								
+								This event aims to choose the Best Civil Engineer from the participants.The event is conducted in four rounds ,each round test the participant's ability
+in coordination, involvement, knowledge level etc.
+<br />
+Round-I 	: 	Preliminary aptitude test<br />
+Round-II	:	Viva session<br />
+Round-III	:	Group-discussion on topic given  at the moment<br />
+Round-IV	:	Solving real world civil engineering problem<br />
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Jazeel Rahmathullah : +91 9567178080
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ce1.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>THE BEST CIVIL ENGINEER</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech ce">
+  
+					<div class="invisi">
+					<img src="images/ce2.jpg" class='pimage'/>
+								<p class='tit'>
+								MIX AND MATCH
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								
+								Set a standard to your concrete mix strength!
+The event tests the concrete mix design skills.
+It requires an overview of how cement,sand and water interact in a concrete mix.
+The competent requires knowledge to use, produce, place and 
+finish concrete cubes, to come up with the best compressive strength possible.
+Concrete mix of specific grade is designed by the participants and 
+after 7 or 28 days of casting and curing 3 cubes, it is tested 
+for compressive strength in Compression Testing Machine.
+<br />
+The competition consists of total four rounds :-
+<br />
+First Round 	:	Preliminary Test<br />
+Second Round	: 	Viva<br />
+Third Round	: 	Group discussion and presentation<br />
+Fourth Round	:	Practical<br />
+The questions will be based on civil engineering<br />
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Anujith K Babu : +91 9947541230
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ce2.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>MIX AND MATCH</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech ce">
+  
+					<div class="invisi">
+					<img src="images/ce3.jpg" class='pimage'/>
+								<p class='tit'>
+								SUSPENSION BRIDGE
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								This is brainstorming construction challenge to design a Cable Stayed Bridge 
+which can take maximum load while suffering minimum deflection.
+In this competition student will make bridge by using popsicle sticks and glue 
+which can take maximum weight with minimum deflection. 
+This will test creativity and skills in the field of bridge design 
+on students along with  civil engineering knowledge.
+<br />
+Round One 	:	Preliminary Test
+<br />
+Round Two	: 	Suspension Bridge Construction<br />
+								
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Abhiram E P : +91 9539803165
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ce3.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>SUSPENSION BRIDGE</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape tech ce">
+  
+					<div class="invisi">
+					<img src="images/ce4.jpg" class='pimage'/>
+								<p class='tit'>
+								SURVEY HUNT
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Ability of the participants to survey and capability to use surveying instruments are determined in this event.
+<br />
+Level I		:	Preliminary Test<br />
+Level II	:	Surveying - Chaining, Levelling, Area measurement<br />
+Level III	: 	Treasure Hunt<br />
+								
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />ASWIN JOSE : +91 9645853828
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ce4.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>SURVEY HUNT</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  <div class="gridd color-shape tech ce">
+  
+					<div class="invisi">
+					<img src="images/ce5.jpg" class='pimage'/>
+								<p class='tit'>
+								NTHROPOMETRIST
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								
+								Anthropometry is the method of taking measurements with human tools and abilities. 
+During the events,contestants will come across a variety of specimens whose dimensions
+are to be uncovered using spacial visualisation ability to mentally manipulate two dimensional  
+and three dimensional figures with simple cognitive tools.
+This is a creative activity involving imagination, intuition and deliberate choice. 
+After qualifying Preliminary written test, participants will be permitted to the final round of the event. 
+The team that finds out the dimensions of the given object with greatest precision will be declared the winners.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />AMINA K R : +91 8281465347
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/ce5.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>NTHROPOMETRIST</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  <div class="gridd color-shape tech mech">
+  
+					<div class="invisi">
+					<img src="images/me1.jpg" class='pimage'/>
+								<p class='tit'>
+								ENGINE ASSEMBLY
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								The ultimatum of royal mechinists. Let the fingers feel more carbon. Assemble the dismantled engine and put life in it. Lets have more throttle !
+
+								
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Ganesh Krishnan : 8891389226 <br />Mathew P Jacob : 9447901177 <br /> Sreerag : 8893840398
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/me1.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>ENGINE ASSEMBLY</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+ <div class="gridd color-shape tech mech">
+  
+					<div class="invisi">
+					<img src="images/me2.jpg" class='pimage'/>
+								<p class='tit'>
+								MACHINIST
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Where skill meets perfction and pace. Be the warrior of machines and conquer the real steel !
+Mark your singnature with fine measurement , and hail the softness of iron !
+
+								
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Vipin V P  : 9744801325 <br />Vivek M R  : 8592975304
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/me2.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>MACHINIST</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  <div class="gridd color-shape tech mech">
+  
+					<div class="invisi">
+					<img src="images/me3.jpg" class='pimage'/>
+								<p class='tit'>
+								SAMASYA
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Problems worthy of attack prove their worth by fighting back _Peit Hein 
+Get ready to storm your brains by real world problem solving. Challenge your engineering mind with a ROBOTIC ARM making competition.
+								
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />CHANDRASHEKHAR  : 8606553825 <br />ARAVIND N  : 9447528459
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/me3.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>SAMASYA</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  <div class="gridd color-shape tech mech">
+  
+					<div class="invisi">
+					<img src="images/me4.jpg" class='pimage'/>
+								<p class='tit'>
+								THRIMANA
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Fire the wings of imagination ! Conceive , perceive and present you 3D skills on CATIA platform. All the space dimensions are yours... Make them dance on the pointr tips with the elegance of a composer !
+
+								
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />ABHIMANYU ASHOK : 8136855242
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/me4.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>THRIMANA</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+ <div class="gridd color-shape cult">
+  
+					<div class="invisi">
+					<img src="images/gen1.jpg" class='pimage'/>
+								<p class='tit'>
+								NRITYA
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								InterCollege Dance Competition. .
+								
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />Francis Xavier  : 9633081100<br />Shruti S Nair : 8547107821
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/gen1.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>NRITYA</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+
+<div class="gridd color-shape cult">
+  
+					<div class="invisi">
+					<img src="images/gen6.jpg" class='pimage'/>
+								<p class='tit'>
+								DROP-D
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								Battle of the Bands.
+								
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/gen6.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>DROP-D</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+
+<div class="gridd color-shape gen">
+  
+					<div class="invisi">
+					<img src="images/gen2.jpg" class='pimage'/>
+								<p class='tit'>
+								TREASURE HUNT
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								
+								TREASURE HUNT
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/gen2.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>TREASURE HUNT</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape gen">
+  
+					<div class="invisi">
+					<img src="images/gen3.jpg" class='pimage'/>
+								<p class='tit'>
+								Voice of Ritu
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								
+								Voice of Ritu
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/gen3.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>Voice of Ritu</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape gen">
+  
+					<div class="invisi">
+					<img src="images/gen4.jpg" class='pimage'/>
+								<p class='tit'>
+								Vidya
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								
+								Multi-level Quiz Competition.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/gen4.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>Quiz Competition</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+<div class="gridd color-shape gen">
+  
+					<div class="invisi">
+					<img src="images/gen5.jpg" class='pimage'/>
+								<p class='tit'>
+								Star of Ritu'16
+								</p>
+								<p class='date'>
+								Date will be updated soon
+								</p>
+								<p class='descript'>
+								
+								An Event to assess overall skills of a student.
+								</p>
+								<p class='coords'>
+								Event Co-ordinators : <br />
+								</p>
+					</div>
+					<figure class="effect-lexi">
+						<img src="images/gen5.jpg" alt="img12"/>
+						<figcaption>
+							<h2></h2>
+							<p>Star of Ritu'16</p>
+							
+						</figcaption>			
+					</figure>
+					
+</div>
+  
+  
+</div>
+</div>
+
+
+<div id="dcontent">
+
+
+
+</div>
+<div class="modal fade" id="demo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h1 class="modal-title" style='font: bold 25px "Jura", sans-serif;'>Demo Modal</h1>
+      </div>
+      <div class="modal-body">
+        <img src="images/ece1.jpg" id='poster' style="height:300px;">
+								<p id='dte'>
+								Date
+								<p>
+								<p id='descr'>
+								description
+								<p>
+								<p id='cords'>
+								Coords
+								</p>
+		
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+	
+<script src='js/isotope.pkgd.js'></script>
+
+        <script src="js/index.js"></script>
+
+<script src='js/bootstrap.min.js'></script>
+
+
+    
+    <script>
+	$(document).ready(function() {
+	
+	
+			
+				$('#dock').Fisheye(
+				{
+					maxWidth: 80,
+					items: 'a',
+					itemsText: 'span',
+					container: '.dock-container',
+					itemWidth: 65,
+					proximity: 80,
+					
+					halign : 'center'
+				}
+			);
+			
+		
+		
+	
+	
+         $('.color-shape').click(function() {
+		 
+		 var titl = $('div > .tit',this).html();
+		 var imgsrc= $('div > .pimage',this).attr('src');
+		 
+		 $('#poster').attr('src',''+imgsrc);
+				$('.modal-title').html("" + titl);
+				
+				var date = $('div > .date',this).html();
+				$('#dte').html("" + date);
+				
+				var desc = $('div > .descript',this).html();
+				$('#descr').html("" + desc);
+				
+				var coords = $('div > .coords',this).html();
+				$('#cords').html("" + coords);
+				
+			$('#demo').modal();
+			
+    
+        });
+		
+		var depp=document.getElementById('mybu');
+	
+	//depp.style.visibility='hidden';
+		$("#blll").click(function(event){
+    // check if window is small enough so dropdown is created
+   
+	var depp=document.getElementById('mybu');
+	
+	depp.style.visibility='visible';
+	
+	
+  });
+  $(".noneed").click(function(event){
+    // check if window is small enough so dropdown is created
+   
+	var depp=document.getElementById('mybu');
+	
+	depp.style.visibility='hidden';
+	$(".alldept").click();
+	
+	
+  });
+		
+         
+});
+
+
+	
+	</script>
+  </body>
+</html>

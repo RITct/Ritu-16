@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>
+Ritu'16 | Contacts
+</title>
+<link rel="shortcut icon" href="images/ritu1.ico">
+<style type='text/css'>
+
+nav {
+    line-height:30px;
+  
+    height:600px;
+    width:1050px;
+    float:left;
+    padding:5px; 
+}
+section {
+    width:200px;
+    float:left;
+    padding:10px; 
+}
+  .dock {
+	position: relative; 
+	height: 50px; 
+	text-align: center;
+}
+.dock-container {
+	position: absolute;
+	height: 50px;
+	background: url(images/dock-bg2.gif);
+	padding-left: 20px;
+}
+a.dock-item {
+	display: block;
+	width: 40px;
+	color: #000;
+	position: absolute;
+	top: 0px;
+	text-align: center;
+	text-decoration: none;
+	font: bold 12px Arial, Helvetica, sans-serif;
+}
+.dock-item img {
+	border: none; 
+	margin: 5px 10px 0px; 
+	width: 100%; 
+}
+.dock-item span {
+	display: none; 
+	padding-left: 20px;
+}
+
+/* dock2 - bottom */
+#dock2 {
+	width: 100%;
+	bottom: 0px;
+	position: absolute;
+	left: 0px;
+}
+.dock-container2 {
+	position: absolute;
+	height: 50px;
+	background: rgba(220,220,220,0.3);
+	padding-left: 20px;
+}
+a.dock-item2 {
+	display: block; 
+	font: bold 12px Arial, Helvetica, sans-serif;
+	width: 40px; 
+	color: #000; 
+	padding: 5px 5px 5px 5px;
+	bottom: 0px; 
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+}
+.dock-item2 span {
+	display: none;
+	padding-left: 20px;
+}
+.dock-item2 img {
+	border: none; 
+	margin: 5px 10px 0px; 
+	width: 100%; 
+}
+
+
+
+</style>
+<script type="text/javascript" src="js/jquery1.7.js"></script>
+<script type="text/javascript" src="js/interface.js"></script>
+<script>
+$(document).ready(
+		function()
+		{
+			$('#dock2').Fisheye(
+				{
+					maxWidth: 80,
+					items: 'a',
+					itemsText: 'span',
+					container: '.dock-container2',
+					itemWidth: 65,
+					proximity: 80,
+					alignment : 'left',
+					valign: 'bottom',
+					halign : 'center'
+				}
+			);
+			
+			$("#hvrr").hover(function(){  $("#myp").fadeIn('slow');},function(){$("#myp").fadeOut();});
+		}
+	);
+
+
+</script>
+</head>
+
+
+<body style="background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;color:white;">
+
+
+
+<nav>
+
+<div style="margin-left:100px;text-align:center;line-height:0.5;margin-top:100px;height:200px;width:200px;box-shadow:0px 0px 15px #ffffff;border: 1px solid #ffffff;">
+<h3> Dr. Ruby Abraham</h3>
+<div style="margin-left:5px;height:2px;width:190px;background:#ffffff;">
+
+</div>
+<h4 style='margin-top:5px;'> (Principal)</h4>
+<br />
+<br />
+<h3> Phone : 0481-2506153</h3>
+
+<h3> principal@rit.ac.in</h3>
+
+</div>
+
+<div style="position:absolute;left:400px;text-align:center;line-height:0.5;top:113px;height:200px;width:200px;box-shadow:0px 0px 15px #ffffff;border: 1px solid #ffffff;">
+<h3> Ajith B Nair</h3>
+<div style="margin-left:5px;height:2px;width:190px;background:#ffffff;">
+
+</div>
+<h4 style='margin-top:5px;'> (Student Coordinator)</h4>
+<br />
+<br />
+<h3> Phone : 9447350455</h3>
+
+<h3> ajithbnairr@gmail.com</h3>
+</div>
+<div style="position:absolute;left:700px;text-align:center;line-height:0.5;top:113px;height:200px;width:200px;box-shadow:0px 0px 15px #ffffff;border: 1px solid #ffffff;">
+<h3>William Gilbert</h3>
+<div style="margin-left:5px;height:2px;width:190px;background:#ffffff;">
+
+</div>
+<h4 style='margin-top:5px;'> (Student Coordinator)</h4>
+<br />
+<br />
+<h3> Phone : 9447671678</h3>
+
+<h3 style="text-align:center;line-height:0.9;" >williamgilbert@out<br />look.com</h3>
+</div>
+<div style="position:absolute;left:1020px;top:0px;height:100%;width:2px;background:#ffffff;">
+</nav>
+
+<section >
+
+<br /><br /><br /><br /><br /><br />
+<h1 style="text-align:center;">CREDITS</h1>
+<div style="margin-left:5px;height:2px;width:190px;background:#ffffff;">
+<br />
+<p>ARUN KUMAR S <br />( Front-End Developer )<br />+91 9526670808<br />arunkumars3483@gmail.com</p>
+<p>SAFALDAS G <br />( Front-End Developer )<br />+91 8907831780<br />safaldasg@gmail.com</p>
+<p>EMIL SEBASTIAN <br />( Image Assets )<br />+91 9400673588<br />emilsebastian09@gmail.com</p>
+<p>JOBIN ABRAHAM <br />( Backend Developer )<br /></p>
+<p>GAUTUM KRISHNA R <br />( Backend Developer )<br /></p>
+</section>
+<div class="dock" id="dock2">
+  <div class="dock-container2">
+  <a class="dock-item2" href="../index.html"><span style="color:white;" >Home</span><img src="images/home2.png" alt="home" /></a> 
+  <a class="dock-item2" href="../Contacts/index.html"><span style="color:white;">Contact</span><img src="images/contact2.png" alt="contact" /></a> 
+  <a class="dock-item2"  href="../Events/index.html" onclick="overlay()"><span style="color:white;">Events</span><img src="images/events2.png" alt="portfolio" /></a> 
+  <a class="dock-item2" href="../Highlights/index.html"><span style="color:white;">Highlights</span><img src="images/highlights2.png" alt="music" /></a> 
+  <a class="dock-item2" href="#" ><span style="color:white;">Why Sponsor Us ?</span><img src="images/why2.png" alt="video" /></a> 
+  <a class="dock-item2" target='_blank' href="../location/map.html"><span style="color:white;">Location</span><img src="images/location2.png" alt="history" /></a> 
+  <a class="dock-item2" target='_blank' href="../Gallery/index.html"><span style="color:white;">Gallery</span><img src="images/gallery2.png" alt="calendar" /></a> 
+  <a class="dock-item2" target='_blank'  href="https://www.facebook.com/rituofficial/"><span style="color:white;">Follow us on facebook</span><img src="images/facebook2.png" alt="links" /></a> 
+  <a class="dock-item2" target='_blank' href="https://twitter.com/RITU_Official"><span style="color:white;">Tweet us</span><img src="images/twitter2.png" alt="rss" /></a> 
+ 
+  </div>
+</div>
+
+</body>
+</html>

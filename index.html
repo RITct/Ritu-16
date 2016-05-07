@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>RITU-16</title>
+   
+   <link rel="shortcut icon" href="images/ritu1.ico">
+    <link rel="stylesheet" href="butterfly.css">
+    <link rel="stylesheet" href="page.css">
+	
+	
+	<link href="css/amaran.min.css" rel="stylesheet"/>
+	<script type="text/javascript">
+
+var colour="#fff000"; 
+var sparkles=50;
+
+
+
+var x=ox=400;
+var y=oy=300;
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var tiny=new Array();
+var star=new Array();
+var starv=new Array();
+var starx=new Array();
+var stary=new Array();
+var tinyx=new Array();
+var tinyy=new Array();
+var tinyv=new Array();
+
+window.onload=function() { if (document.getElementById) {
+  var i, rats, rlef, rdow;
+  for (var i=0; i<sparkles; i++) {
+    var rats=createDiv(3, 3);
+    rats.style.visibility="hidden";
+    rats.style.zIndex="999";
+    document.body.appendChild(tiny[i]=rats);
+    starv[i]=0;
+    tinyv[i]=0;
+    var rats=createDiv(5, 5);
+    rats.style.backgroundColor="transparent";
+    rats.style.visibility="hidden";
+    rats.style.zIndex="999";
+    var rlef=createDiv(1, 5);
+    var rdow=createDiv(5, 1);
+    rats.appendChild(rlef);
+    rats.appendChild(rdow);
+    rlef.style.top="2px";
+    rlef.style.left="0px";
+    rdow.style.top="0px";
+    rdow.style.left="2px";
+    document.body.appendChild(star[i]=rats);
+  }
+  set_width();
+  sparkle();
+}}
+
+function sparkle() {
+  var c;
+  if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
+    ox=x;
+    oy=y;
+    for (c=0; c<sparkles; c++) if (!starv[c]) {
+      star[c].style.left=(starx[c]=x)+"px";
+      star[c].style.top=(stary[c]=y+1)+"px";
+      star[c].style.clip="rect(0px, 5px, 5px, 0px)";
+      star[c].childNodes[0].style.backgroundColor=star[c].childNodes[1].style.backgroundColor=(colour=="random")?newColour():colour;
+      star[c].style.visibility="visible";
+      starv[c]=50;
+      break;
+    }
+  }
+  for (c=0; c<sparkles; c++) {
+    if (starv[c]) update_star(c);
+    if (tinyv[c]) update_tiny(c);
+  }
+  setTimeout("sparkle()", 40);
+}
+
+function update_star(i) {
+  if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
+  if (starv[i]) {
+    stary[i]+=1+Math.random()*3;
+    starx[i]+=(i%5-2)/5;
+    if (stary[i]<shigh+sdown) {
+      star[i].style.top=stary[i]+"px";
+      star[i].style.left=starx[i]+"px";
+    }
+    else {
+      star[i].style.visibility="hidden";
+      starv[i]=0;
+      return;
+    }
+  }
+  else {
+    tinyv[i]=50;
+    tiny[i].style.top=(tinyy[i]=stary[i])+"px";
+    tiny[i].style.left=(tinyx[i]=starx[i])+"px";
+    tiny[i].style.width="2px";
+    tiny[i].style.height="2px";
+    tiny[i].style.backgroundColor=star[i].childNodes[0].style.backgroundColor;
+    star[i].style.visibility="hidden";
+    tiny[i].style.visibility="visible"
+  }
+}
+
+function update_tiny(i) {
+  if (--tinyv[i]==25) {
+    tiny[i].style.width="1px";
+    tiny[i].style.height="1px";
+  }
+  if (tinyv[i]) {
+    tinyy[i]+=1+Math.random()*3;
+    tinyx[i]+=(i%5-2)/5;
+    if (tinyy[i]<shigh+sdown) {
+      tiny[i].style.top=tinyy[i]+"px";
+      tiny[i].style.left=tinyx[i]+"px";
+    }
+    else {
+      tiny[i].style.visibility="hidden";
+      tinyv[i]=0;
+      return;
+    }
+  }
+  else tiny[i].style.visibility="hidden";
+}
+
+document.onmousemove=mouse;
+function mouse(e) {
+  if (e) {
+    y=e.pageY;
+    x=e.pageX;
+  }
+  else {
+    set_scroll();
+    y=event.y+sdown;
+    x=event.x+sleft;
+  }
+}
+
+window.onscroll=set_scroll;
+function set_scroll() {
+  if (typeof(self.pageYOffset)=='number') {
+    sdown=self.pageYOffset;
+    sleft=self.pageXOffset;
+  }
+  else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+    sdown=document.body.scrollTop;
+    sleft=document.body.scrollLeft;
+  }
+  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+    sleft=document.documentElement.scrollLeft;
+    sdown=document.documentElement.scrollTop;
+  }
+  else {
+    sdown=0;
+    sleft=0;
+  }
+}
+
+window.onresize=set_width;
+function set_width() {
+  var sw_min=999999;
+  var sh_min=999999;
+  if (document.documentElement && document.documentElement.clientWidth) {
+    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+  }
+  if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+  }
+  if (document.body.clientWidth) {
+    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+  }
+  if (sw_min==999999 || sh_min==999999) {
+    sw_min=800;
+    sh_min=600;
+  }
+  swide=sw_min;
+  shigh=sh_min;
+}
+
+function createDiv(height, width) {
+  var div=document.createElement("div");
+  div.style.position="absolute";
+  div.style.height=height+"px";
+  div.style.width=width+"px";
+  div.style.overflow="hidden";
+  return (div);
+}
+
+function newColour() {
+  var c=new Array();
+  c[0]=255;
+  c[1]=Math.floor(Math.random()*256);
+  c[2]=Math.floor(Math.random()*(256-c[1]/2));
+  c.sort(function(){return (0.5 - Math.random());});
+  return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
+}
+// ]]>
+</script>
+	<script type="text/javascript" src="js/jquery1.7.js"></script>
+	
+
+
+	<script src="js/jquery.amaran.js"></script>
+<script type="text/javascript" src="js/interface.js"></script>
+
+ <script type="text/javascript" src="js/jquery-BubbleEngine.js"></script>
+   
+<script type="text/javascript">
+    $(document).ready(function(){
+        //Build Bubble Source with the Bubble Engine ------------------------
+        var SoapBubbleSource = $().BubbleEngine({
+        particleSizeMin:            0,
+            particleSizeMax:            30,
+            particleSourceX:            100,
+            particleSourceY:            760,
+            particleAnimationDuration:  4000,
+            particleAnimationVariance:  2000,
+            particleScatteringX:        500,
+            particleScatteringY:        500,
+            particleDirection:          'right',
+            gravity:                    -200,
+            imgSource:                  'images/bubble.png',
+            RenewBubbles:               'on'
+        });
+        //Add Bubbles to Source ---------------------------------------------
+        SoapBubbleSource.addBubbles(70);
+    });
+</script>
+
+   <style type="text/css">
+   
+   @font-face{
+      
+        src:url('jura/Jura-Regular.ttf');
+         font-family: Jura;
+    }
+   body{
+		font-family: "Jura", sans-serif;
+		
+		
+		}
+   
+   .no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0;  }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(loader.gif) center no-repeat #fff;
+        background-color: #082330;
+}
+   
+   
+   
+   .dock {
+	position: relative; 
+	height: 50px; 
+	text-align: center;
+}
+.dock-container {
+	position: absolute;
+	height: 50px;
+	background: url(images/dock-bg2.gif);
+	padding-left: 20px;
+}
+a.dock-item {
+	display: block;
+	width: 40px;
+	color: #000;
+	position: absolute;
+	top: 0px;
+	text-align: center;
+	text-decoration: none;
+	font: bold 12px Arial, Helvetica, sans-serif;
+}
+.dock-item img {
+	border: none; 
+	margin: 5px 10px 0px; 
+	width: 100%; 
+}
+.dock-item span {
+	display: none; 
+	padding-left: 20px;
+}
+
+/* dock2 - bottom */
+#dock2 {
+	width: 100%;
+	bottom: 0px;
+	position: absolute;
+	left: 0px;
+}
+.dock-container2 {
+	position: absolute;
+	height: 50px;
+	background: rgba(220,220,220,0.3);
+	padding-left: 20px;
+}
+a.dock-item2 {
+	display: block; 
+	font: bold 15px "Jura", sans-serif;
+	font-weight:1200;
+	width: 40px; 
+	color: #000; 
+	padding: 5px 5px 5px 5px;
+	bottom: 0px; 
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+}
+.dock-item2 span {
+	display: none;
+	padding-left: 20px;
+	color:white;
+	font-size:1.5em;
+}
+.dock-item2 img {
+	border: none; 
+	margin: 5px 10px 0px; 
+	width: 100%; 
+}
+
+
+#myp{
+	
+	position:absolute;
+	left:50px;
+	top:20px;
+	
+	width:50%;
+	border:3px solid black;
+	border-radius:25px;
+	background:rgba(0,0,10,0.6);
+	background-size:800px 600px;
+	padding: 20px 20px 20px 20px;
+	color:#eeeeee;
+	display:none;
+	
+	}
+	
+	
+	.floated_left{
+		float:left;
+		width:60px;
+			
+			display:none;
+	
+	}
+	.floated_left{
+		float:left;
+		width:60px;
+			
+			
+	
+	}
+	.floated_left-invisible{
+		float:left;
+		width:60px;
+			
+			display:none;
+	
+	}
+	.floated_right{
+		float:right;
+		width:220px;
+		font-size:1.3em;
+		margin-top:0px;
+	
+	}
+	.floated_right p{
+	padding-top:0px;
+	margin-top:0px;
+	}
+	.floated_right p a{
+	color:white;
+	}
+	.wrapo{
+	
+	width:230px;
+	
+	color:white;
+	padding: 3px 3px 0px 3px;
+	border-radius:10px;
+	}
+	.clear:after{
+	
+		clear:both;
+		content:"";
+		display:table;
+		
+	}
+	
+	.amaran.myTheme{
+  background: rgba(0,0,0,0);
+  font-size:13px;
+  padding:0px;
+  margin: 10px 5px 0px 0px;
+  color: white;
+  width:230px;
+ 
+  
+}
+   </style>
+   <script>
+//paste this code under head tag or in a seperate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+               //sleep(1000);
+		$(".se-pre-con").fadeOut("slow");
+		$("#rbody").fadeIn(20000);
+		
+		//$('.prelo').removeClass('prelo').delay(10000);
+		$('.prelo').removeClass('prelo');
+		$('.prelo1').addClass('prelo1').delay(1500).queue(function(){
+		
+		$('.prelo1').removeClass('prelo1');
+		
+		});
+		$('.prelo2').addClass('prelo2').delay(3000).queue(function(){
+		
+		$('.prelo2').removeClass('prelo2');
+		
+		});
+		$('.prelo3').addClass('prelo3').delay(4500).queue(function(){
+		
+		$('.prelo3').removeClass('prelo3');
+		
+		});
+		
+		$('.invi').addClass('invi').delay(17000).queue(function(){
+		
+		$('.invi').removeClass('invi');
+		$('#rbody').addClass('invi');
+		$('#redmark').addClass('invi');
+		$('#yellowmark').addClass('invi');
+		$('#greenmark').addClass('invi');
+		$('#bluemark').addClass('invi');
+		});
+		
+		/*
+		$("#rituorg").hover(function(){
+    $("#myp").fadeIn('slow');
+},
+function(){
+    $("#myp").fadeOut();
+	
+});*/
+var msgs = [
+				'The Techno-Cultural Fest of Rajiv Gandhi Institute Technology, Kottayam',
+                
+				'Decipher \'16 app now available for  <a href="https://play.google.com/store/apps/details?id=com.ritu16.desipherfacebook.decipher" target="_blank">Android</a>.',
+				
+				'<a target="_blank" href="https://goo.gl/0BT0IR">CashBack Partner : <br /><img style="width:220px;height:60px;" src="images/ad1.jpg" /> <br /> Always Get Extra Cashback for Amazon, Flipkart, Paytm & more...</a>',
+'The details of events have been updated. Please check the \&nbsp\;<a href="http://www.ritu16.com/events">EVENTS</a>\&nbsp\; page.',
+				'Online Treasure Hunt : The second phase of \&nbsp\;<a href="http://decipher.ritu16.com" target="_blank">DECIPHER</a>\&nbsp\; will start soon. Congratulations to all first phase winners.'
+                ,'Best Viewed With Mozilla FireFox and Google Chrome.'     ];
+			
+			var	colors=['rgba(39,174,96,0.6)','rgba(255,0,0,0.6)','rgba(39,174,96,0.9)','rgba(179,0,0,0.6)','rgba(0,0,0,0.6)','rgba(0,138,230,0.6)'];
+			var images=['icon.jpg','icon.jpg','icon.jpg','icon.jpg','icon.jpg','icon.jpg'];
+			
+			var i = 0;
+			var j=0;
+			var k=0;
+ setInterval(function(){
+
+ 
+ 
+ $.amaran({
+    content:{
+       themeName:'myTheme',
+        message:msgs[(i++)%(msgs.length)],
+		bcolor:colors[(j++)%(colors.length)],
+		imag:images[(k++)%(images.length)],
+		iconvisibilty:'hidden'
+       },
+    themeTemplate:function(data){
+      return '<div class="mydiv wrapo clear" style="background: '+ data.bcolor +' ;"><div class="floated_left"><img src="'+data.imag+'" style="width:60px;height:60px;border-radius:8px;"></div><div class="floated_right"><p >'+ data.message + '</p></div></div>';
+    },
+    position:'top right',
+	'resetTimeout' :true,
+	 'delay'     :5000
+	
+});
+ 
+ /*
+
+ $.amaran({
+        'theme'     :'colorful',
+        'content'   :{
+           bgcolor:colors[(j++)%(colors.length)],
+           color:'#fff',
+           message:msgs[(i++)%(msgs.length)]
+        },
+        'position'  :'top right',
+        
+		 'closeButton'       :true,
+        'closeOnClick'      :false,
+    });
+*/
+	
+
+                
+	
+	}, 5000);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	});
+	
+	function renderFbLike() {
+				var parent = document.getElementById('fblikediv');
+				var child = document.getElementById('fblikeimg');
+				parent.removeChild(child);
+				
+				var html2 = "<iframe src=\"http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Frituofficial&amp;width=300&amp;layout=box_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=65\" scrolling=\"no\" frameborder=\"0\" style=\" overflow:hidden; width:48px; padding:5px 5px 5px 5px; border-radius: 0 0 5px 5px;height:60px;\" allowTransparency=\"true\"></iframe>";
+					document.getElementById('fblikediv').innerHTML = html2;
+			}
+			
+			function overlay() {
+	el = document.getElementById("overlay");
+	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
+ </script>
+</head>
+<body  >
+
+<div class="se-pre-con">
+<h1 style='position:absolute;bottom:10%;width:100%;text-align:center'>Ritu'16</h1>
+<h1 style='position:absolute;bottom:5%;width:100%;text-align:center'>Techno-Cultural Fest. of RIT, Kottayam</h1>
+</div>
+
+
+
+
+
+
+
+
+
+<img src="bg1.jpg" style="height:100%;width:100%;position:absolute;left:0px;top:0px;" >
+<style type='text/css'>
+	#condd{
+		font-family: "Open Sans", sans-serif;
+			text-align:center;
+			position:absolute;
+			right:2px; bottom:3px;
+			margin-right:calc(  6% + 1px );
+			margin-bottom:calc( 16% + 10px );
+		}
+		.march{
+		margin-top:0px;
+		margin-bottom:0px;
+		font-size:40px;
+		
+		color:white;
+		
+		}
+		.ddd{
+		margin-top:0px;
+		margin-bottom:0px;
+			font-size:38px;
+			
+		color:white;
+		}
+	</style>
+	
+	
+	<div id='condd' style='position:absolute;height:110px;width:220px;border-radius: 10px 20px;'>
+
+<img src='dateritu.png' style="width:250px;"/>
+</div>
+
+<div class="sky">
+    
+    <div class="clouds_one"></div>
+    <div class="clouds_two"></div>
+    <div class="clouds_three"></div>
+  </div>
+<div style="position:absolute;left:-350px;bottom:-8%;">
+  <img id='ritutree' style="width:72%" src='tree3.png' />
+  
+  </div>
+<canvas id='s'>This application requires a (fast) HTML5 compliant browser.</canvas>
+
+<div id='hoverme'>
+<img id="rituorg" class="invi pulse2" src="rituorg.png"   />
+  </div>
+  <div style="height:3px;width:3px;background:#000000;position:absolute;left:300px;top:300px;">
+  
+  </div>
+  <div id="rbody" >
+  <div >
+  <img src='rbody.png' style="width:126px;"/>
+  </div>
+  </div>
+ 
+  <div id="yellowmark" class="prelo">
+  <div class="prelo leafs" >
+  <img src='yellow.png' style="width:115px;"/>
+  
+  </div>
+  </div>
+  <div id="redmark" class="prelo1">
+  <div class="prelo1 leafs"  >
+  <img src='red.png' style="width:125px;"/>
+  </div>
+  </div>
+  <div id="bluemark" class="prelo2">
+  <div class="prelo2 leafs"  >
+  <img src='blue.png' style="width:95px;"/>
+  </div>
+  </div>
+  <div id="greenmark" class="prelo3">
+  <div class="prelo3 leafs"  >
+  <img src='green.png' style="width:125px;"/>
+  </div>
+  </div>
+  
+  
+<div id="dragon" class="prelo">
+<div class="containe prelo">
+    <div class="hover-container">
+        <div class="left wing"></div>
+        <div class="right wing"></div>
+        <div class="yellowbody"></div>
+        <div class="head"></div>
+    </div>
+</div>
+</div>
+
+
+<div id="dragon2" class="prelo1">
+<div class="containe prelo1" >
+    <div class="hover-container">
+        <div class="left wing"></div>
+        <div class="right wing"></div>
+        <div class="redbody"></div>
+        <div class="head"></div>
+    </div>
+</div>
+</div>
+<div id="dragon3" class="prelo2">
+<div class="containe prelo2" >
+    <div class="hover-container">
+        <div class="left wing"></div>
+        <div class="right wing"></div>
+        <div class="bluebody"></div>
+        <div class="head"></div>
+    </div>
+</div>
+</div>
+<div id="dragon4" class="prelo3">
+<div class="containe prelo3" >
+    <div class="hover-container">
+        <div class="left wing"></div>
+        <div class="right wing"></div>
+        <div class="greenbody"></div>
+        <div class="head"></div>
+    </div>
+</div>
+</div>
+<img src="images/rajiv.png" style="position:absolute;left:40%;bottom:10.4%;"/>
+
+<style type='text/css' >
+#overlay {
+     visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+}
+
+#overlay div {
+     width:300px;
+     margin: 100px auto;
+     background-color: #fff;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center;
+	 color:#000000;
+}
+
+</style>
+<div id="overlay">
+     <div>
+          <p >Coming Soon. . .</p>
+		  Click here to [<a href='#' onclick='overlay()'><span style="color:#000000">close</span></a>]
+     </div>
+</div>
+
+
+
+<div class="dock" id="dock2">
+  <div class="dock-container2">
+  <a class="dock-item2" href="#"><span>Home</span><img src="images/home2.png" alt="home" /></a> 
+  <a class="dock-item2" href="Contacts/index.html"><span>Contact</span><img src="images/contact2.png" alt="contact" /></a> 
+  <a class="dock-item2"  href="Events/index.html" ><span>Events</span><img src="images/events2.png" alt="portfolio" /></a> 
+  <a class="dock-item2" href="Highlights/index.html" ><span>Highlights</span><img src="images/highlights2.png" alt="music" /></a> 
+  <a class="dock-item2" href="#" onclick="overlay()"><span>Sponsors</span><img src="images/why2.png" alt="video" /></a> 
+  <a class="dock-item2"  target="_blank" href="location/map.html"><span>Location</span><img src="images/location2.png" alt="history" /></a> 
+  <a class="dock-item2"   target="_blank" href="Gallery/index.html"><span>Gallery</span><img src="images/gallery2.png" alt="calendar" /></a> 
+  <a class="dock-item2"  target="_blank" href="https://www.facebook.com/rituofficial/"><span>Follow us on facebook</span><img src="images/facebook2.png" alt="links" /></a> 
+  <a class="dock-item2"  target="_blank" href="https://twitter.com/RITU_Official"><span>Tweet us</span><img src="images/twitter2.png" alt="rss" /></a> 
+ 
+  </div>
+</div>
+<div id='myp'>
+
+<h1>Ritu'16</h1>
+
+<p style='font-size:1.3em;font-weight:400;font-color:black;'>
+
+Ritu'16 is the Techno-Cultural Fest. of Govt. Rajiv Gandhi Institute Of Technology Kottayam.
+We celebrate RITU with four major symbolisms in mind. First of all, RITU is the festival of RANG  or color. Colors in RITU are symbolic of the cultural dominion dedicated to the arts and crafts of our history. RIT has been bequeathed with an opulent history of aces who have etched their names in the golden history of RIT for their cultural pursuits. Following their footsteps, seeking their blessings, we embark on this festive journey...
+</p>
+
+</div>
+
+<div style="position:absolute;bottom:120px;left:16%;height:100px;width:150px;" id="hvrr">
+
+</div>
+
+
+ 
+<script>
+
+
+
+function resize_canvas(){
+
+location.href=location.href;
+       
+		
+}
+$(document).ready(
+		function()
+		{
+			$('#dock2').Fisheye(
+				{
+					maxWidth: 80,
+					items: 'a',
+					itemsText: 'span',
+					container: '.dock-container2',
+					itemWidth: 65,
+					proximity: 80,
+					alignment : 'left',
+					valign: 'bottom',
+					halign : 'center'
+				}
+			);
+			
+			$("#hvrr").hover(function(){  $("#myp").fadeIn('slow');  },function(){$("#myp").fadeOut();});
+		}
+	);
+
+
+
+
+/**
+ * Original version http://labs.hyperandroid.com/js1k
+ */
+(function() {
+  Grass = function() {
+    return this;
+  };
+  
+  Grass.prototype= {
+      
+    
+    alto_hierba: 0,    // grass height
+    maxAngle:    0,    // maximum grass rotation angle (wind movement)
+    angle:       0,    // construction angle. thus, every grass is different to others  
+    coords:      null,  // quadric bezier curves coordinates
+    color:       null,  // grass color. modified by ambient component.
+    offset_control_point:   3,    // grass base width. greater values, wider at the basement.
+
+    initialize : function(canvasWidth, canvasHeight, minHeight, maxHeight, angleMax, initialMaxAngle)  {
+
+      // grass start position
+      var sx= Math.floor( Math.random()*canvasWidth );
+      var sy= canvasHeight;
+      
+      // quadric curve middle control point. higher values means wider grass from base to peak.
+      // try offset_control_x=10 for thicker grass.
+      var offset_control_x=10;  
+      
+      this.alto_hierba= minHeight+Math.random()*maxHeight;
+      this.maxAngle= 10+Math.random()*angleMax;
+      this.angle= Math.random()*initialMaxAngle*(Math.random()<0.5?1:-1)*Math.PI/180;
+
+      // hand crafted value. modify offset_control_x to play with grass curvature slope.
+      var csx= sx-offset_control_x ;
+
+      // grass curvature. greater values make grass bender. 
+      // try with:  
+      //        var csy= sy-this.alto_hierba;  -> much more bended grass.
+      //        var csy= sy-1;                 -> totally unbended grass.
+      //        var csy= sy-this.alto_hierba/2;-> original. good looking grass.
+      //var csy= 0;
+	  var csy= sy-this.alto_hierba/2;
+      if ( Math.random()<0.1 ) {
+        csy= sy-this.alto_hierba;
+      } else {
+        csy= sy-this.alto_hierba/2;
+      }
+          
+      /**
+       I determined that both bezier curves that conform each grass should have
+       the same middle control point to be parallel.
+       You can play with psx/psy adding or removing values to slightly modify grass
+       geometry.
+      **/
+      var psx= csx;
+      // changed var psy= csy; to
+      var psy= csy-offset_control_x;
+          
+      // the bigger offset_control_point, the wider on its basement.
+      this.offset_control_point=3;
+      var dx= sx+this.offset_control_point;
+      var dy= sy;      
+      
+      this.coords= [sx,sy,csx,csy,psx,psy,dx,dy];
+          
+      // grass color.
+      this.color= [16+Math.floor(Math.random()*32),
+                   100+Math.floor(Math.random()*155),
+                   16+Math.floor(Math.random()*32) ];
+      
+    },
+    
+    /**
+     * paint every grass.
+     * @param ctx is the canvas2drendering context
+     * @param time for grass animation.
+     * @param ambient parameter to dim or brighten every grass.
+     * @returns nothing
+     */
+    paint : function(ctx,time,ambient) {
+
+          ctx.save();
+          
+          // grass peak position. how much to rotate the peak.
+          // less values (ie the .0005), will make as if there were a softer wind.
+          var inc_punta_hierba= Math.sin(time*0.0005);
+          
+          // rotate the point, so grass curves are modified accordingly. If just moved horizontally, the curbe would
+          // end by being unstable with undesired visuals. 
+          var ang= this.angle + Math.PI/2 + inc_punta_hierba * Math.PI/180*(this.maxAngle*Math.cos(time*0.0002));
+          var px= this.coords[0]+ this.offset_control_point + this.alto_hierba*Math.cos(ang);
+          var py= this.coords[1]                  - this.alto_hierba*Math.sin(ang);
+    
+          var c= this.coords;
+      
+          ctx.beginPath();
+          ctx.moveTo( c[0], c[1] );
+          ctx.bezierCurveTo(c[0], c[1], c[2], c[3], px, py);
+          ctx.bezierCurveTo(px, py, c[4], c[5], c[6], c[7]);
+          ctx.closePath();
+          ctx.fillStyle='rgb('+
+              Math.floor(this.color[0]*ambient)+','+
+              Math.floor(this.color[1]*ambient)+','+
+              Math.floor(this.color[2]*ambient)+')';
+          ctx.fill();
+
+          ctx.restore();
+            
+    }  
+  };
+})();
+
+(function() {
+  Garden= function() {
+    return this;
+  };
+  
+  Garden.prototype= {
+    grass:      null,
+    ambient:    1,
+    stars:      null,
+    firefly_radius:  10,
+    num_fireflyes:  40,
+    num_stars:    512,
+    width:      0,
+    height:      0,
+    
+    initialize : function(width, height, size)  {
+      this.width= width;
+      this.height= height;
+      this.grass= [];
+      
+      for(var i=0; i<size; i++ ) {
+        var g= new Grass();
+        g.initialize(
+            width,
+            height,
+            40,      // min grass height 
+            height*2/10, // max grass height
+            20,     // grass max initial random angle 
+            40      // max random angle for animation 
+            );
+        this.grass.push(g);
+      }
+      
+      this.stars= [];
+      for( i=0; i<this.num_stars; i++ )  {
+        this.stars.push( Math.floor( Math.random()*(width-10)+5  ) );
+        this.stars.push( Math.floor( Math.random()*(height-10)+5 ) );
+      }
+    },
+    
+    paint : function(ctx, time){
+      ctx.save();
+      
+      // draw stars if ambient below .3 -> night
+      if ( this.ambient<0.3 )  {
+        
+        // modify stars translucency by ambient (as transitioning to day, make them dissapear).
+        ctx.globalAlpha= 1-((this.ambient-0.05)/0.25);
+
+        // as well as making them dimmer
+        intensity= 1 - (this.ambient/2-0.05)/0.25;
+        
+        // how white do you want the stars to be ??
+        var c= Math.floor( 192*intensity );
+        var strc= 'rgb('+c+','+c+','+c+')';
+        ctx.strokeStyle=strc;
+        
+        // first num_fireflyes coordinates are fireflyes themshelves.
+        for( var j=this.num_fireflyes*2; j<this.stars.length; j+=2 )  {
+          var inc=1;
+          
+          // every one out of 3 stars move at 1.5 increment
+          if ( j%3===0 ) {
+            inc=1.5;
+          } else if ( j%11===0 ) {
+          // every one out of 11 stars move at 2.5 increment
+            inc=2.5;
+          }
+          // all the others at increment 1
+          this.stars[j]= (this.stars[j]+0.1*inc)%canvas.width;
+          
+          var y= this.stars[j+1];
+          ctx.strokeRect(this.stars[j],this.stars[j+1],1,1);
+
+        }
+      }
+      
+      ctx.globalAlpha= 1;
+      
+      var i;
+      // draw fireflyes
+        ctx.fillStyle= '#ffff00';      
+        for(i=0; i<this.num_fireflyes*2; i+=2) {
+          var angle= Math.PI*2*Math.sin(time*3E-4) + i*Math.PI/50;
+          var radius= this.firefly_radius*Math.cos(time*3E-4);
+          ctx.fillRect( 
+              this.width/4+ 
+              0.5*this.stars[i] + 
+              150*Math.cos(time*3E-4) * Math.sin(time*0.00001*i) +  // move horizontally with time 
+              radius*Math.cos(angle),
+              
+              this.height/2 + 
+              0.5*this.stars[i+1] +  
+              20*Math.sin(time*3E-4) * 5* Math.cos(time*0.00001*i)+  // move vertically with time 
+              radius*Math.sin(angle),
+              
+                3,
+                3 );
+        }            
+      
+      
+      for(i=0; i<this.grass.length; i++ ) {
+        this.grass[i].paint(ctx,time,this.ambient);
+      }
+      ctx.restore();
+    }
+  };
+})();
+
+
+    function _doit()    {
+      
+      ctx.fillStyle= gradient;
+      
+	  ctx.clearRect(0,0,canvas.width,canvas.height);
+      var ntime= new Date().getTime();
+      var elapsed= ntime-time;
+      garden.paint( ctx, elapsed );
+	  
+      
+    }
+    
+    
+    
+var lerpTime= 10000;    // time taken to fade sky colors
+var nextLerpTime= 15000;  // after fading, how much time to wait to fade colors again.
+
+var interval= null;
+var canvas= null;
+var ctx= null;
+var garden= null;
+
+var gradient;
+var time;
+
+    function init(images) {
+      
+        canvas= document.getElementById('s');
+        ctx= canvas.getContext('2d');
+        canvas.width= window.innerWidth;
+        canvas.height=window.innerHeight;
+
+        garden= new Garden();
+        garden.initialize(canvas.width, canvas.height, 300);
+        
+       // lerp(0,2000);
+        
+        time= new Date().getTime();
+        interval = setInterval(_doit, 30);
+    }
+
+  
+    
+    
+window.addEventListener(
+    'load',
+    init(null),
+    false);
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
